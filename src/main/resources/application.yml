@@ -1,0 +1,11 @@
+resilience4j:
+  ratelimiter:
+    ratelimiter-aspect-order: 2
+    metrics:
+      enabled: true
+    instances:
+      storeRateLimiter:
+        limit-for-period: 4
+        limit-refresh-period: 60s
+        timeout-duration: 0s # Request wait for calls to be executed, after this wait time ratelimiter will throw exception
+
